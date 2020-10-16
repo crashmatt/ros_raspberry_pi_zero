@@ -7,10 +7,10 @@ Many thanks for the helpful documentation sets and Wiki instructions referenced 
 
 # Installation
 
-## Installing Raspbian Jessie on Rasberry Pi Zero
+## Installing Raspberry OS BUSTER on Rasberry Pi Zero
 To begin, download the last version of the Raspbian OS from [this link](http://www.raspberrypi.org/downloads/)
 
-In our case we downloaded the *Jessie Lite* version at https://downloads.raspberrypi.org/raspbian_lite_latest
+In our case we downloaded the *Lite* version at https://downloads.raspberrypi.org/raspbian_lite_latest
 
 Plug the Rasp SD card in your Linux based PC and copy the image.
 ```bash
@@ -45,10 +45,23 @@ While we are going to build ROS Kinetic from source on our Raspberry Pi Zero, th
 $ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu jessie main" > /etc/apt/sources.list.d/ros-latest.list'
 $ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
 ```
+Noetic install used as recommended from: http://wiki.ros.org/noetic/Installation/Debian
+```bash
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+```
+
 Now update the Debian package index with the new repository:
 ```bash
 $ sudo apt-get update
 $ sudo apt-get upgrade
+```
+
+### Switch to python3
+Ros noetic only runs with python3.  To prevent python2 being used then set an alias from python to python 3
+```bash
+$alias python = python3
+$alias pip = pip3
 ```
 
 ### ROS bootstrap dependencies
