@@ -102,6 +102,10 @@ $ wstool init -j8 src noetic-robot-wet.rosinstall
 $ wstool update -j8 -t src
 ```
 ### libconsole-bridge-dev
+```bash
+$ sudo apt install libconsole-bridge-dev
+```
+OLD METHOD
 We need install libconsole-bridge-dev for ROS_Comm, as it is not yet available in the Jessie repositories and must be built manually.
 The packages can be built from source in a new directory (Also install checkinstall and cmake):
 ```bash
