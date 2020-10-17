@@ -134,15 +134,15 @@ http://raspi.tv/2012/using-screen-with-raspberry-pi-to-avoid-leaving-ssh-session
 
 Invoke catkin_make_isolated:
 ```bash
-$ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/noetic
+$ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic
 ```
 Now ROS should be installed! Remember to source the new installation:
 ```bash
-$ echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
+$ echo 'source /opt/ros/kinetic/setup.bash' >> ~/.bashrc
 ```
 Then you must reboot or execute:
 ```bash
-$ source /opt/ros/noetic/setup.bash
+$ source /opt/ros/kinetic/setup.bash
 ```
 
 ## Raspicam node
