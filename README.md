@@ -73,6 +73,11 @@ $ sudo easy_install pip
 $ sudo pip install -U rosdep rosinstall_generator wstool rosinstall
 ```
 
+### OpenCV dependencies
+```bash
+apt install libopencv-dev liborocos-kdl-dev libompl-dev
+```
+
 ### Initializing rosdep
 ```bash
 $ sudo rosdep init
