@@ -1,7 +1,7 @@
 # Introduction
-The Raspberry Pi Zero is a small, affordable, and powerfull single board computer.  With ROS NOETIC, we can use this as a convenient I/O expander and remote camera, integrated with the rest of our robot via the Rasbperry Pi Zero USB Network Gadget.  The Raspberry Pi camera is hardware accelerated, enabling efficient VGA video streaming with the ROS Camera interfaces.
+The Raspberry Pi Zero is a small, affordable, and powerfull single board computer.  With ROS KINETIC, we can use this as a convenient I/O expander and remote camera, integrated with the rest of our robot via the Rasbperry Pi Zero USB Network Gadget.  The Raspberry Pi camera is hardware accelerated, enabling efficient VGA video streaming with the ROS Camera interfaces.
 
-The following steps will enable the compilation and installation of ROS NOETIC on a Raspberry Pi Zero, running Raspian Jessie Lite.
+The following steps will enable the compilation and installation of ROS KINETIC on a Raspberry Pi Zero, running Raspian Jessie Lite.
 
 Many thanks for the helpful documentation sets and Wiki instructions referenced below.  They provided several missing steps and gaps I was missing.
 
@@ -94,8 +94,8 @@ $ cd ~/ros_catkin_ws
 Next we will want to fetch the core packages so we can build them. We will use wstool for this.
 We will install ROS-Comm (ROS package, build, and communication libraries without GUI tools) and additional packages used for the camera support:
 ```bash
-$ rosinstall_generator ros_comm diagnostics bond_core dynamic_reconfigure nodelet_core rosserial class_loader image_common vision_opencv image_transport_plugins pluginlib --rosdistro noetic --deps --wet-only --exclude roslisp --tar > noetic-robot-wet.rosinstall
-$ wstool init -j8 src noetic-robot-wet.rosinstall
+$ rosinstall_generator ros_comm diagnostics bond_core dynamic_reconfigure nodelet_core rosserial class_loader image_common vision_opencv image_transport_plugins pluginlib --rosdistro kinetic --deps --wet-only --exclude roslisp --tar > kinetic-robot-wet.rosinstall
+$ wstool init -j8 src kinetic-robot-wet.rosinstall
 ```
 **NOTE:** If wstool init fails or is interrupted, you can resume the download by running:
 ```
@@ -123,7 +123,7 @@ The remaining dependencies should be resolved by running rosdep:
 
 ```bash
 $ cd ~/ros_catkin_ws
-$ rosdep install --from-paths src --ignore-src --rosdistro noetic -y -r --os=debian:buster
+$ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y -r --os=debian:buster
 ```
 
 ### Building the catkin Workspace
